@@ -83,6 +83,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Enums.vb" />
+    <Compile Include="Classes\Objects\Receiver.vb" />
+    <Compile Include="Classes\Objects\Sender.vb" />
+    <Compile Include="Classes\Objects\PrintData.vb" />
+    <Compile Include="Classes\Objects\Service.vb" />
+    <Compile Include="Classes\Objects\StringObj.vb" />
     <Compile Include="frm_Main.designer.vb">
       <DependentUpon>frm_Main.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,9 @@
     <None Include="Resources\edit.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
