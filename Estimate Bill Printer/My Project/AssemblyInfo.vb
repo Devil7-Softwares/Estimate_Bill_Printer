@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Estimate Bill Printer")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Estimate Bill Printer")> 
-<Assembly: AssemblyCopyright("Copyright ©  2018")> 
+<Assembly: AssemblyTitle("Devil7 - Estimate Bill Printer")> 
+<Assembly: AssemblyDescription("Application for Printing and Maintaining Estimate Bills")> 
+<Assembly: AssemblyCompany("Devil7")> 
+<Assembly: AssemblyProduct("Devil7 Automation")> 
+<Assembly: AssemblyCopyright("Copyright © Devil7 2018")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
