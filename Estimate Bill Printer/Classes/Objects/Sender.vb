@@ -26,5 +26,25 @@
     Public Overrides Function ToString() As String
         Return Me.Name
     End Function
+    Public Shared Function FromXML(ByVal XML As String) As Sender
+        Try
+            Dim x As New Xml.Serialization.XmlSerializer(GetType(Sender))
+            Return x.Deserialize(New IO.MemoryStream(System.Text.Encoding.ASCII.GetBytes(XML)))
+        Catch ex As Exception
+
+        End Try
+        Return Nothing
+    End Function
+    Public Function ToXML() As String
+        Try
+            Dim x As New Xml.Serialization.XmlSerializer(GetType(Sender))
+            Dim Stream As New IO.MemoryStream
+            x.Serialize(Stream, Me)
+            Return System.Text.Encoding.ASCII.GetString(Stream.ToArray)
+        Catch ex As Exception
+
+        End Try
+        Return ""
+    End Function
 End Class
 
