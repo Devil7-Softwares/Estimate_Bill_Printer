@@ -34,6 +34,7 @@ Partial Class frm_Main
         Me.btn_OtherSettings = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Services = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_ServerSettings = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_Refresh = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup_Items = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup_Printing = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -45,6 +46,8 @@ Partial Class frm_Main
         Me.GridView_Data = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.ProgressPanel_Bills = New DevExpress.XtraWaitForm.ProgressPanel()
+        Me.Worker_Bills = New System.ComponentModel.BackgroundWorker()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl_Data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView_Data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,9 +56,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Edit, Me.btn_Print, Me.btn_PrintPreview, Me.btn_Senders, Me.btn_Receivers, Me.btn_WaterMarkSettings, Me.SkinRibbonGalleryBarItem1, Me.btn_OtherSettings, Me.btn_Services, Me.btn_ServerSettings})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Edit, Me.btn_Print, Me.btn_PrintPreview, Me.btn_Senders, Me.btn_Receivers, Me.btn_WaterMarkSettings, Me.SkinRibbonGalleryBarItem1, Me.btn_OtherSettings, Me.btn_Services, Me.btn_ServerSettings, Me.btn_Refresh})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 13
+        Me.RibbonControl.MaxItemId = 14
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.RibbonPage_Settings})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -158,6 +161,14 @@ Partial Class frm_Main
         Me.btn_ServerSettings.ImageOptions.LargeImage = Global.D7Automation.My.Resources.Resources.server
         Me.btn_ServerSettings.Name = "btn_ServerSettings"
         '
+        'btn_Refresh
+        '
+        Me.btn_Refresh.Caption = "Refresh"
+        Me.btn_Refresh.Id = 13
+        Me.btn_Refresh.ImageOptions.Image = Global.D7Automation.My.Resources.Resources.refresh
+        Me.btn_Refresh.ImageOptions.LargeImage = Global.D7Automation.My.Resources.Resources.refresh
+        Me.btn_Refresh.Name = "btn_Refresh"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup_Items, Me.RibbonPageGroup_Printing})
@@ -166,7 +177,8 @@ Partial Class frm_Main
         '
         'RibbonPageGroup_Items
         '
-        Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Add)
+        Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Refresh)
+        Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Add, True)
         Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Edit)
         Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Remove)
         Me.RibbonPageGroup_Items.Name = "RibbonPageGroup_Items"
@@ -233,11 +245,28 @@ Partial Class frm_Main
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'ProgressPanel_Bills
+        '
+        Me.ProgressPanel_Bills.Appearance.BackColor = System.Drawing.Color.Transparent
+        Me.ProgressPanel_Bills.Appearance.Options.UseBackColor = True
+        Me.ProgressPanel_Bills.BarAnimationElementThickness = 2
+        Me.ProgressPanel_Bills.ContentAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ProgressPanel_Bills.Description = "Fetching Data from Server..."
+        Me.ProgressPanel_Bills.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProgressPanel_Bills.Location = New System.Drawing.Point(0, 143)
+        Me.ProgressPanel_Bills.Name = "ProgressPanel_Bills"
+        Me.ProgressPanel_Bills.Size = New System.Drawing.Size(521, 275)
+        Me.ProgressPanel_Bills.TabIndex = 5
+        '
+        'Worker_Bills
+        '
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(521, 449)
+        Me.Controls.Add(Me.ProgressPanel_Bills)
         Me.Controls.Add(Me.GridControl_Data)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
@@ -280,6 +309,9 @@ Partial Class frm_Main
     Friend WithEvents btn_OtherSettings As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_Services As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btn_ServerSettings As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ProgressPanel_Bills As DevExpress.XtraWaitForm.ProgressPanel
+    Friend WithEvents Worker_Bills As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btn_Refresh As DevExpress.XtraBars.BarButtonItem
 
 
 End Class

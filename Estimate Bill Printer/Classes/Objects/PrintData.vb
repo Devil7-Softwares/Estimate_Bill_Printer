@@ -1,7 +1,11 @@
 ﻿Public Class PrintData
     ReadOnly Property HasGSTIN As Boolean
         Get
-            Return Sender.GSTIN.Trim <> ""
+            If Sender Is Nothing Then
+                Return False
+            Else
+                Return Sender.GSTIN.Trim <> ""
+            End If
         End Get
     End Property
     ReadOnly Property Fees As Integer

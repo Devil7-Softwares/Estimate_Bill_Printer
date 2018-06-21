@@ -69,12 +69,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property DatabaseName() As String
+        Public Property Database() As String
             Get
-                Return CType(Me("DatabaseName"),String)
+                Return CType(Me("Database"),String)
             End Get
             Set
-                Me("DatabaseName") = value
+                Me("Database") = value
             End Set
         End Property
         
@@ -123,6 +123,18 @@ Namespace My
             End Get
             Set
                 Me("Server") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Port() As String
+            Get
+                Return CType(Me("Port"),String)
+            End Get
+            Set
+                Me("Port") = value
             End Set
         End Property
     End Class

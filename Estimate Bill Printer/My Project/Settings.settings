@@ -5,7 +5,7 @@
     <Setting Name="Skin" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DatabaseName" Type="System.String" Scope="User">
+    <Setting Name="Database" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="IntegratedSecurity" Type="System.Boolean" Scope="User">
@@ -18,6 +18,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Server" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Port" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
