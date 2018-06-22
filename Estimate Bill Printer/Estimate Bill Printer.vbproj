@@ -97,6 +97,30 @@
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\frm_Data.designer.vb">
+      <DependentUpon>frm_Data.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Data.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Receiver.designer.vb">
+      <DependentUpon>frm_Receiver.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Receiver.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Sender.designer.vb">
+      <DependentUpon>frm_Sender.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Sender.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frm_Senders.designer.vb">
+      <DependentUpon>frm_Senders.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Senders.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialogs\frm_ServerSettings.Designer.vb">
       <DependentUpon>frm_ServerSettings.vb</DependentUpon>
     </Compile>
@@ -132,6 +156,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialogs\frm_Data.resx">
+      <DependentUpon>frm_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Receiver.resx">
+      <DependentUpon>frm_Receiver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Sender.resx">
+      <DependentUpon>frm_Sender.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Senders.resx">
+      <DependentUpon>frm_Senders.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_ServerSettings.resx">
       <DependentUpon>frm_ServerSettings.vb</DependentUpon>
     </EmbeddedResource>

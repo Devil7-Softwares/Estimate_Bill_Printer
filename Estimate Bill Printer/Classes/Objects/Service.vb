@@ -1,10 +1,12 @@
 ﻿Public Class Service
-    Sub New(ByVal ID As Integer, ByVal ServiceName As String, ByVal Fees As String)
-        Me.ID = ID
+    Sub New()
+        ServiceName = ""
+        Fees = 0
+    End Sub
+    Sub New(ByVal ServiceName As String, ByVal Fees As String)
         Me.ServiceName = ServiceName
         Me.Fees = Fees
     End Sub
-    Property ID As Integer
     Property ServiceName As String
     Property Fees As String
     Public Shared Function FromXML(ByVal XML As String) As List(Of Service)

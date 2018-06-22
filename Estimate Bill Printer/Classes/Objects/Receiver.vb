@@ -1,4 +1,6 @@
 ﻿Public Class Receiver
+    Sub New()
+    End Sub
     Sub New(ByVal ID As Integer, ByVal Name As String, ByVal Address As String, ByVal State As String, ByVal StateCode As String, ByVal GSTIN As String)
         Me.ID = ID
         Me.Name = Name

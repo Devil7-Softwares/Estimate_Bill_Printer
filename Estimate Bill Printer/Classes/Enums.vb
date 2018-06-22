@@ -1,4 +1,4 @@
-﻿Module Enums
+﻿Public Module Enums
     Public Enum DialogMode
         Add
         Edit
