@@ -51,10 +51,6 @@ Module Database
                     Command.Parameters.AddWithValue("@Service", Service.ToXML(Services))
                     Command.Parameters.AddWithValue("@Receiver", Receiver.ToXML)
 
-                    For Each i As MySqlParameter In Command.Parameters
-                        MsgBox(i.Value.ToString)
-                    Next
-
                     Dim ID As Integer = Command.ExecuteScalar
                     If ID > 0 Then
                         Return New PrintData(ID, Sender, SerialNumber, EstimateDate, Receiver, Services)
