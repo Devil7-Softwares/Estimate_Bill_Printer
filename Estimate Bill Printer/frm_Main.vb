@@ -89,4 +89,9 @@
         Dim d As New frm_Receivers
         d.ShowDialog()
     End Sub
+
+    Private Sub btn_Services_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Services.ItemClick
+        Dim n As New frm_Services
+        n.ShowDialog()
+    End Sub
 End Class
