@@ -200,6 +200,10 @@
   <ItemGroup>
     <Compile Include="Classes\Encryption.vb" />
     <Content Include="icon.ico" />
+    <None Include="Resources\edit_user.png" />
+    <None Include="Resources\delete_user.png" />
+    <None Include="Resources\add_user.png" />
+    <None Include="Resources\refresh_user.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\server.ico" />
     <None Include="Resources\services.ico" />

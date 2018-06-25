@@ -86,9 +86,9 @@ Partial Class frm_Sender
         Me.PanelControl1.Controls.Add(Me.btn_Cancel)
         Me.PanelControl1.Controls.Add(Me.btn_OK)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 275)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 271)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(346, 35)
+        Me.PanelControl1.Size = New System.Drawing.Size(342, 35)
         Me.PanelControl1.TabIndex = 0
         '
         'btn_Cancel
@@ -103,7 +103,7 @@ Partial Class frm_Sender
         'btn_OK
         '
         Me.btn_OK.Dock = System.Windows.Forms.DockStyle.Right
-        Me.btn_OK.Location = New System.Drawing.Point(269, 2)
+        Me.btn_OK.Location = New System.Drawing.Point(265, 2)
         Me.btn_OK.Name = "btn_OK"
         Me.btn_OK.Size = New System.Drawing.Size(75, 31)
         Me.btn_OK.TabIndex = 0
@@ -159,7 +159,7 @@ Partial Class frm_Sender
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(346, 275)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(342, 271)
         Me.TableLayoutPanel1.TabIndex = 1
         '
         'TableLayoutPanel5
@@ -176,7 +176,7 @@ Partial Class frm_Sender
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(226, 27)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(222, 27)
         Me.TableLayoutPanel5.TabIndex = 15
         '
         'LabelControl19
@@ -184,7 +184,7 @@ Partial Class frm_Sender
         Me.LabelControl19.Appearance.Options.UseTextOptions = True
         Me.LabelControl19.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top
         Me.LabelControl19.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LabelControl19.Location = New System.Drawing.Point(110, 3)
+        Me.LabelControl19.Location = New System.Drawing.Point(108, 3)
         Me.LabelControl19.Name = "LabelControl19"
         Me.LabelControl19.Size = New System.Drawing.Size(5, 21)
         Me.LabelControl19.TabIndex = 5
@@ -198,18 +198,18 @@ Partial Class frm_Sender
         Me.loc_X_Text.Name = "loc_X_Text"
         Me.loc_X_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.loc_X_Text.Properties.MaxValue = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.loc_X_Text.Size = New System.Drawing.Size(101, 20)
+        Me.loc_X_Text.Size = New System.Drawing.Size(99, 20)
         Me.loc_X_Text.TabIndex = 0
         '
         'loc_Y_Text
         '
         Me.loc_Y_Text.Dock = System.Windows.Forms.DockStyle.Fill
         Me.loc_Y_Text.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.loc_Y_Text.Location = New System.Drawing.Point(121, 3)
+        Me.loc_Y_Text.Location = New System.Drawing.Point(119, 3)
         Me.loc_Y_Text.Name = "loc_Y_Text"
         Me.loc_Y_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.loc_Y_Text.Properties.MaxValue = New Decimal(New Integer() {10000, 0, 0, 0})
-        Me.loc_Y_Text.Size = New System.Drawing.Size(102, 20)
+        Me.loc_Y_Text.Size = New System.Drawing.Size(100, 20)
         Me.loc_Y_Text.TabIndex = 6
         '
         'txt_Opacity_Text
@@ -219,7 +219,7 @@ Partial Class frm_Sender
         Me.txt_Opacity_Text.Location = New System.Drawing.Point(117, 191)
         Me.txt_Opacity_Text.Name = "txt_Opacity_Text"
         Me.txt_Opacity_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txt_Opacity_Text.Size = New System.Drawing.Size(226, 20)
+        Me.txt_Opacity_Text.Size = New System.Drawing.Size(222, 20)
         Me.txt_Opacity_Text.TabIndex = 14
         '
         'color_Text
@@ -230,7 +230,7 @@ Partial Class frm_Sender
         Me.color_Text.Name = "color_Text"
         Me.color_Text.Properties.AutomaticColor = System.Drawing.Color.Black
         Me.color_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.color_Text.Size = New System.Drawing.Size(226, 20)
+        Me.color_Text.Size = New System.Drawing.Size(222, 20)
         Me.color_Text.TabIndex = 13
         '
         'TableLayoutPanel6
@@ -245,7 +245,7 @@ Partial Class frm_Sender
         Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
         Me.TableLayoutPanel6.RowCount = 1
         Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(226, 25)
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(222, 25)
         Me.TableLayoutPanel6.TabIndex = 12
         '
         'font_Text
@@ -257,17 +257,17 @@ Partial Class frm_Sender
         Me.font_Text.Properties.Appearance.Options.UseFont = True
         Me.font_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.font_Text.Properties.NullText = "Select Font"
-        Me.font_Text.Size = New System.Drawing.Size(152, 20)
+        Me.font_Text.Size = New System.Drawing.Size(149, 20)
         Me.font_Text.TabIndex = 1
         '
         'txt_Size
         '
         Me.txt_Size.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_Size.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txt_Size.Location = New System.Drawing.Point(161, 3)
+        Me.txt_Size.Location = New System.Drawing.Point(158, 3)
         Me.txt_Size.Name = "txt_Size"
         Me.txt_Size.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txt_Size.Size = New System.Drawing.Size(62, 20)
+        Me.txt_Size.Size = New System.Drawing.Size(61, 20)
         Me.txt_Size.TabIndex = 2
         '
         'txt_Angle_Text
@@ -277,7 +277,7 @@ Partial Class frm_Sender
         Me.txt_Angle_Text.Location = New System.Drawing.Point(117, 108)
         Me.txt_Angle_Text.Name = "txt_Angle_Text"
         Me.txt_Angle_Text.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.txt_Angle_Text.Size = New System.Drawing.Size(226, 20)
+        Me.txt_Angle_Text.Size = New System.Drawing.Size(222, 20)
         Me.txt_Angle_Text.TabIndex = 9
         '
         'LabelControl1
@@ -484,7 +484,7 @@ Partial Class frm_Sender
         Me.txt_Name.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_Name.Location = New System.Drawing.Point(117, 3)
         Me.txt_Name.Name = "txt_Name"
-        Me.txt_Name.Size = New System.Drawing.Size(226, 20)
+        Me.txt_Name.Size = New System.Drawing.Size(222, 20)
         Me.txt_Name.TabIndex = 1
         '
         'txt_Address
@@ -492,7 +492,7 @@ Partial Class frm_Sender
         Me.txt_Address.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_Address.Location = New System.Drawing.Point(117, 30)
         Me.txt_Address.Name = "txt_Address"
-        Me.txt_Address.Size = New System.Drawing.Size(226, 20)
+        Me.txt_Address.Size = New System.Drawing.Size(222, 20)
         Me.txt_Address.TabIndex = 1
         '
         'txt_GSTIN
@@ -500,7 +500,7 @@ Partial Class frm_Sender
         Me.txt_GSTIN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_GSTIN.Location = New System.Drawing.Point(117, 57)
         Me.txt_GSTIN.Name = "txt_GSTIN"
-        Me.txt_GSTIN.Size = New System.Drawing.Size(226, 20)
+        Me.txt_GSTIN.Size = New System.Drawing.Size(222, 20)
         Me.txt_GSTIN.TabIndex = 1
         '
         'txt_WatermarkText
@@ -508,7 +508,7 @@ Partial Class frm_Sender
         Me.txt_WatermarkText.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_WatermarkText.Location = New System.Drawing.Point(117, 84)
         Me.txt_WatermarkText.Name = "txt_WatermarkText"
-        Me.txt_WatermarkText.Size = New System.Drawing.Size(226, 20)
+        Me.txt_WatermarkText.Size = New System.Drawing.Size(222, 20)
         Me.txt_WatermarkText.TabIndex = 1
         '
         'LabelControl20
@@ -519,7 +519,7 @@ Partial Class frm_Sender
         Me.LabelControl20.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LabelControl20.Location = New System.Drawing.Point(3, 246)
         Me.LabelControl20.Name = "LabelControl20"
-        Me.LabelControl20.Size = New System.Drawing.Size(100, 26)
+        Me.LabelControl20.Size = New System.Drawing.Size(100, 22)
         Me.LabelControl20.TabIndex = 16
         Me.LabelControl20.Text = "Heading"
         '
@@ -538,14 +538,14 @@ Partial Class frm_Sender
         Me.txt_Heading.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_Heading.Location = New System.Drawing.Point(117, 246)
         Me.txt_Heading.Name = "txt_Heading"
-        Me.txt_Heading.Size = New System.Drawing.Size(226, 20)
+        Me.txt_Heading.Size = New System.Drawing.Size(222, 20)
         Me.txt_Heading.TabIndex = 17
         '
         'frm_Sender
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(346, 310)
+        Me.ClientSize = New System.Drawing.Size(342, 306)
         Me.ControlBox = False
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.PanelControl1)

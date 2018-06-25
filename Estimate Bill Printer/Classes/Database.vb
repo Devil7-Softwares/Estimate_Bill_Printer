@@ -74,7 +74,7 @@ Module Database
                     Return Command.ExecuteNonQuery
                 End Using
             Catch ex As Exception
-                MsgBox("Error while creating bill." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                MsgBox("Error while deleting bill." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
             End Try
             Return 0
         End Function
@@ -147,6 +147,53 @@ Module Database
             End Try
             Return Nothing
         End Function
+        Public Shared Function Edit(ByVal ID As Integer, ByVal Name As String, ByVal Address As String, ByVal GSTIN As String, ByVal WatermarkText As String, ByVal WatermarkAngle As Integer, ByVal WatermarkFontName As String, ByVal WatermarkFontSize As Single, ByVal WatermarkColor As Color, ByVal WatermarkOpacity As Integer, ByVal Heading As String, ByVal Location As Point, ByVal CloseConnection As Boolean) As Sender
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("UPDATE `{0}`.`{1}` SET `Name`=@Name, `Address`= @Address, `GSTIN`= @GSTIN, `WatermarkText`= @WatermarkText, `WatermarkAngle`= @WatermarkAngle, `WatermarkFontName`= @WatermarkFontName, `WatermarkFontSize`= @WatermarkFontSize, `WatermarkColor`= @WatermarkColor, `WatermarkOpacity`= @WatermarkOpacity, `Heading`= @Heading, `Location`= @Location WHERE ID={2};", DatabaseName, TableName, ID)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Command.Parameters.AddWithValue("@Name", Name)
+                    Command.Parameters.AddWithValue("@Address", Address)
+                    Command.Parameters.AddWithValue("@GSTIN", GSTIN)
+                    Command.Parameters.AddWithValue("@WatermarkText", WatermarkText)
+                    Command.Parameters.AddWithValue("@WatermarkAngle", WatermarkAngle)
+                    Command.Parameters.AddWithValue("@WatermarkFontName", WatermarkFontName)
+                    Command.Parameters.AddWithValue("@WatermarkFontSize", WatermarkFontSize)
+                    Command.Parameters.AddWithValue("@WatermarkColor", WatermarkColor.ToArgb)
+                    Command.Parameters.AddWithValue("@WatermarkOpacity", WatermarkOpacity)
+                    Command.Parameters.AddWithValue("@Heading", Heading)
+                    Command.Parameters.AddWithValue("@Location", Location.X & "," & Location.Y)
+
+                    Dim Result As Integer = Command.ExecuteNonQuery
+                    If Result > 0 Then
+                        Return New Sender(Result, Name, Address, GSTIN, WatermarkText, WatermarkAngle, WatermarkFontName, WatermarkFontSize, WatermarkColor, WatermarkOpacity, Heading, Location)
+                    Else
+                        MsgBox("Unknown error on creating sender.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                    End If
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while creating sender." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return Nothing
+        End Function
+        Public Shared Function Delete(ByVal ID As Integer) As Integer
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("DELETE FROM `{0}`.`{1}` WHERE ID={2};", DatabaseName, TableName, ID)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Return Command.ExecuteNonQuery
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while deleting sender." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return 0
+        End Function
     End Class
     Public Class Receivers
         Public Shared TableName As String = "receivers"
@@ -200,6 +247,21 @@ Module Database
                 MsgBox("Error while creating receiver." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
             End Try
             Return Nothing
+        End Function
+        Public Shared Function Delete(ByVal ID As Integer) As Integer
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("DELETE FROM `{0}`.`{1}` WHERE ID={2};", DatabaseName, TableName, ID)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Return Command.ExecuteNonQuery
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while deleting receiver." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return 0
         End Function
     End Class
     Public Class Services
