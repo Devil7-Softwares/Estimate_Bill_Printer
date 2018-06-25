@@ -2,7 +2,25 @@
     Dim ServicesList As New List(Of String)
     Dim SendersList As New List(Of Sender)
     Dim ReceiversList As New List(Of Receiver)
+
+    Private Sub frm_Main_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        My.Settings.Skin = Me.GetSkin.Name
+        My.Settings.WindowState = Me.WindowState
+        My.Settings.Size = Me.Size
+        My.Settings.Location = Me.Location
+        My.Settings.Save()
+    End Sub
     Private Sub frm_Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.WindowState = My.Settings.WindowState
+        Me.Size = My.Settings.Size
+        Me.Location = My.Settings.Location
+        If My.Settings.Skin <> "" Then
+            Try
+                Me.Theme.LookAndFeel.SkinName = My.Settings.Skin
+            Catch ex As Exception
+
+            End Try
+        End If
         If Not Worker_Bills.IsBusy Then Worker_Bills.RunWorkerAsync()
     End Sub
     Private Sub Worker_Bills_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles Worker_Bills.DoWork

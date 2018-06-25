@@ -29,7 +29,7 @@ Partial Class frm_Splash
         Me.labelControl2 = New DevExpress.XtraEditors.LabelControl()
         Me.labelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.marqueeProgressBarControl1 = New DevExpress.XtraEditors.MarqueeProgressBarControl()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.pictureEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.marqueeProgressBarControl1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +46,6 @@ Partial Class frm_Splash
         Me.pictureEdit2.Properties.Appearance.Options.UseBackColor = True
         Me.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.pictureEdit2.Properties.ShowMenu = False
-        Me.pictureEdit2.Properties.ZoomAccelerationFactor = 1.0R
         Me.pictureEdit2.Size = New System.Drawing.Size(426, 180)
         Me.pictureEdit2.TabIndex = 14
         '
@@ -61,7 +60,6 @@ Partial Class frm_Splash
         Me.pictureEdit1.Properties.Appearance.Options.UseBackColor = True
         Me.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.pictureEdit1.Properties.ShowMenu = False
-        Me.pictureEdit1.Properties.ZoomAccelerationFactor = 1.0R
         Me.pictureEdit1.Size = New System.Drawing.Size(160, 48)
         Me.pictureEdit1.TabIndex = 13
         '
@@ -90,7 +88,7 @@ Partial Class frm_Splash
         Me.marqueeProgressBarControl1.Size = New System.Drawing.Size(404, 12)
         Me.marqueeProgressBarControl1.TabIndex = 10
         '
-        'Splash
+        'frm_Splash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -100,7 +98,7 @@ Partial Class frm_Splash
         Me.Controls.Add(Me.labelControl2)
         Me.Controls.Add(Me.labelControl1)
         Me.Controls.Add(Me.marqueeProgressBarControl1)
-        Me.Name = "Splash"
+        Me.Name = "frm_Splash"
         Me.Text = "Form1"
         CType(Me.pictureEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pictureEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -114,5 +112,5 @@ Partial Class frm_Splash
     Private WithEvents labelControl2 As DevExpress.XtraEditors.LabelControl
     Private WithEvents labelControl1 As DevExpress.XtraEditors.LabelControl
     Private WithEvents marqueeProgressBarControl1 As DevExpress.XtraEditors.MarqueeProgressBarControl
-    Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents Theme As DevExpress.LookAndFeel.DefaultLookAndFeel
 End Class
