@@ -377,6 +377,18 @@ Namespace My
                 Me("WindowState") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Microsoft XPS Document Writer")>  _
+        Public Property XPSPrinter() As String
+            Get
+                Return CType(Me("XPSPrinter"),String)
+            End Get
+            Set
+                Me("XPSPrinter") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

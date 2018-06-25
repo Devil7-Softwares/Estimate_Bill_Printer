@@ -35,6 +35,7 @@ Partial Class frm_Main
         Me.btn_Services = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_ServerSettings = New DevExpress.XtraBars.BarButtonItem()
         Me.btn_Refresh = New DevExpress.XtraBars.BarButtonItem()
+        Me.btn_PDF = New DevExpress.XtraBars.BarButtonItem()
         Me.rp_Home = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup_Items = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup_Printing = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -49,6 +50,7 @@ Partial Class frm_Main
         Me.ProgressPanel_Bills = New DevExpress.XtraWaitForm.ProgressPanel()
         Me.Worker_Bills = New System.ComponentModel.BackgroundWorker()
         Me.PrintDocumentEx1 = New D7Automation.PrintDocumentEx()
+        Me.SavePDF = New System.Windows.Forms.SaveFileDialog()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl_Data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView_Data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,9 +59,9 @@ Partial Class frm_Main
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Edit, Me.btn_Print, Me.btn_PrintPreview, Me.btn_Senders, Me.btn_Receivers, Me.btn_WaterMarkSettings, Me.SkinRibbonGalleryBarItem1, Me.btn_OtherSettings, Me.btn_Services, Me.btn_ServerSettings, Me.btn_Refresh})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Edit, Me.btn_Print, Me.btn_PrintPreview, Me.btn_Senders, Me.btn_Receivers, Me.btn_WaterMarkSettings, Me.SkinRibbonGalleryBarItem1, Me.btn_OtherSettings, Me.btn_Services, Me.btn_ServerSettings, Me.btn_Refresh, Me.btn_PDF})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.MaxItemId = 14
+        Me.RibbonControl.MaxItemId = 15
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.RibbonPage_Settings})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -170,6 +172,14 @@ Partial Class frm_Main
         Me.btn_Refresh.ImageOptions.LargeImage = Global.D7Automation.My.Resources.Resources.refresh
         Me.btn_Refresh.Name = "btn_Refresh"
         '
+        'btn_PDF
+        '
+        Me.btn_PDF.Caption = "Export PDF"
+        Me.btn_PDF.Id = 14
+        Me.btn_PDF.ImageOptions.Image = Global.D7Automation.My.Resources.Resources.export_pdf
+        Me.btn_PDF.ImageOptions.LargeImage = Global.D7Automation.My.Resources.Resources.export_pdf
+        Me.btn_PDF.Name = "btn_PDF"
+        '
         'rp_Home
         '
         Me.rp_Home.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup_Items, Me.RibbonPageGroup_Printing})
@@ -189,6 +199,7 @@ Partial Class frm_Main
         '
         Me.RibbonPageGroup_Printing.ItemLinks.Add(Me.btn_Print)
         Me.RibbonPageGroup_Printing.ItemLinks.Add(Me.btn_PrintPreview)
+        Me.RibbonPageGroup_Printing.ItemLinks.Add(Me.btn_PDF, True)
         Me.RibbonPageGroup_Printing.Name = "RibbonPageGroup_Printing"
         Me.RibbonPageGroup_Printing.Text = "Printing"
         '
@@ -268,6 +279,12 @@ Partial Class frm_Main
         Me.PrintDocumentEx1.Items = Nothing
         Me.PrintDocumentEx1.PrintTaxDetails = False
         '
+        'SavePDF
+        '
+        Me.SavePDF.DefaultExt = "pdf"
+        Me.SavePDF.FileName = "Estimate Bills.pdf"
+        Me.SavePDF.Filter = "Adobe Portable Document (*.pdf)|*.pdf"
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,6 +337,8 @@ Partial Class frm_Main
     Friend WithEvents Worker_Bills As System.ComponentModel.BackgroundWorker
     Friend WithEvents btn_Refresh As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents PrintDocumentEx1 As D7Automation.PrintDocumentEx
+    Friend WithEvents btn_PDF As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents SavePDF As System.Windows.Forms.SaveFileDialog
 
 
 End Class

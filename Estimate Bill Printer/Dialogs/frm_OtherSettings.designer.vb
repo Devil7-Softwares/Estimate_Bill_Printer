@@ -29,9 +29,12 @@ Partial Class frm_OtherSettings
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl()
         Me.txt_GSTPercentage = New DevExpress.XtraEditors.SpinEdit()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.txt_PrinterName = New DevExpress.XtraEditors.TextEdit()
         CType(Me.sw_AutoWatermark.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_TaxDetailsFormat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_GSTPercentage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_PrinterName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -93,11 +96,28 @@ Partial Class frm_OtherSettings
         Me.txt_GSTPercentage.Size = New System.Drawing.Size(197, 20)
         Me.txt_GSTPercentage.TabIndex = 6
         '
+        'LabelControl5
+        '
+        Me.LabelControl5.Location = New System.Drawing.Point(19, 193)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(90, 13)
+        Me.LabelControl5.TabIndex = 7
+        Me.LabelControl5.Text = "XPS Printer Name :"
+        '
+        'txt_PrinterName
+        '
+        Me.txt_PrinterName.Location = New System.Drawing.Point(115, 190)
+        Me.txt_PrinterName.Name = "txt_PrinterName"
+        Me.txt_PrinterName.Size = New System.Drawing.Size(197, 20)
+        Me.txt_PrinterName.TabIndex = 8
+        '
         'frm_OtherSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(322, 191)
+        Me.ClientSize = New System.Drawing.Size(322, 222)
+        Me.Controls.Add(Me.txt_PrinterName)
+        Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.txt_GSTPercentage)
         Me.Controls.Add(Me.LabelControl4)
         Me.Controls.Add(Me.LabelControl3)
@@ -114,6 +134,7 @@ Partial Class frm_OtherSettings
         CType(Me.sw_AutoWatermark.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_TaxDetailsFormat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_GSTPercentage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_PrinterName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -125,4 +146,6 @@ Partial Class frm_OtherSettings
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_GSTPercentage As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_PrinterName As DevExpress.XtraEditors.TextEdit
 End Class

@@ -83,5 +83,8 @@
     <Setting Name="WindowState" Type="System.Windows.Forms.FormWindowState" Scope="User">
       <Value Profile="(Default)">Normal</Value>
     </Setting>
+    <Setting Name="XPSPrinter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Microsoft XPS Document Writer</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

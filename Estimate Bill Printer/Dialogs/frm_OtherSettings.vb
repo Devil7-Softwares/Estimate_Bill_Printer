@@ -8,6 +8,7 @@
     Private Sub frm_OtherSettings_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.GSTPercentage = txt_GSTPercentage.Value
         My.Settings.TaxDetails = txt_TaxDetailsFormat.Text
+        My.Settings.XPSPrinter = txt_PrinterName.Text
         My.Settings.Save()
     End Sub
 
@@ -15,5 +16,6 @@
         sw_AutoWatermark.IsOn = My.Settings.AutoWatermark
         txt_TaxDetailsFormat.Text = My.Settings.TaxDetails
         txt_GSTPercentage.Value = My.Settings.GSTPercentage
+        txt_PrinterName.Text = My.Settings.XPSPrinter
     End Sub
 End Class

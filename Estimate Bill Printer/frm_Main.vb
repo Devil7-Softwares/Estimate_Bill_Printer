@@ -150,4 +150,44 @@
             d.ShowDialog()
         End If
     End Sub
+
+    Private Sub btn_PDF_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_PDF.ItemClick
+        If GridView_Data.SelectedRowsCount > 0 Then
+            Try
+                Using Printer As New PrintDocumentEx
+                    Dim items As New List(Of PrintData)
+                    Dim XPSPath As String = My.Computer.FileSystem.GetTempFileName
+                    For Each i As Integer In GridView_Data.GetSelectedRows
+                        Dim r = CType(GridView_Data.GetRow(i), PrintData)
+                        items.Add(r)
+                    Next
+                    Printer.Items = items
+                    Printer.PrintTaxDetails = My.Computer.Keyboard.CtrlKeyDown
+                    If SavePDF.ShowDialog = Windows.Forms.DialogResult.OK Then
+                        With Printer
+                            .PrinterSettings.PrinterName = My.Settings.XPSPrinter
+                            If My.Computer.FileSystem.FileExists(XPSPath) Then My.Computer.FileSystem.DeleteFile(XPSPath)
+                            .DefaultPageSettings.PrinterSettings.PrintToFile = True
+                            .DefaultPageSettings.PrinterSettings.PrintFileName = XPSPath
+                            .Print()
+                        End With
+                        If My.Computer.FileSystem.FileExists(XPSPath) Then
+                            Using pdfXpsDoc As PdfSharp.Xps.XpsModel.XpsDocument = PdfSharp.Xps.XpsModel.XpsDocument.Open(XPSPath)
+                                PdfSharp.Xps.XpsConverter.Convert(pdfXpsDoc, SavePDF.FileName, 0)
+                            End Using
+                            If MsgBox("File Successfully Exported. Do you want to open the file...?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Done") = MsgBoxResult.Yes Then
+                                Try
+                                    Process.Start(SavePDF.FileName)
+                                Catch ex As Exception
+
+                                End Try
+                            End If
+                        End If
+                    End If
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while exporting PDF." & vbNewLine & vbNewLine & "Additional Information:" & vbNewLine & vbNewLine & ex.Message & vbNewLine & ex.StackTrace, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
+            End Try
+        End If
+    End Sub
 End Class
