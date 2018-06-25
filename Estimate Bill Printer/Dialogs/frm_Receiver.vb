@@ -1,6 +1,7 @@
 ﻿Public Class frm_Receiver
     Dim Mode As DialogMode
     Property Item As Receiver
+    Dim ID As Integer = 0
     Sub New(ByVal Mode As DialogMode, Optional ByVal Item As Receiver = Nothing)
 
         ' This call is required by the designer.
@@ -17,6 +18,7 @@
 
         End Try
         If Mode = DialogMode.Edit Then
+            Me.ID = Item.ID
             Me.txt_Name.Text = Item.Name
             Me.txt_Address.Text = Item.Address
             Me.txt_StateCode.Text = Item.StateCode
@@ -44,10 +46,18 @@
     End Sub
 
     Private Sub btn_Ok_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Ok.Click
-        Me.Item = Database.Receivers.Create(txt_Name.Text, txt_Address.Text, cmb_State.SelectedItem.ToString, txt_StateCode.Text, txt_GSTIN.Text, False)
-        If Item IsNot Nothing Then
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
+        If Mode = DialogMode.Add Then
+            Me.Item = Database.Receivers.Create(txt_Name.Text, txt_Address.Text, cmb_State.SelectedItem.ToString, txt_StateCode.Text, txt_GSTIN.Text, False)
+            If Item IsNot Nothing Then
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
+        Else
+            Me.Item = Database.Receivers.Edit(ID, txt_Name.Text, txt_Address.Text, cmb_State.SelectedItem.ToString, txt_StateCode.Text, txt_GSTIN.Text, False)
+            If Item IsNot Nothing Then
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
         End If
     End Sub
 End Class

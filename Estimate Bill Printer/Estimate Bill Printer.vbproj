@@ -109,6 +109,12 @@
     <Compile Include="Dialogs\frm_Receiver.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\frm_Receivers.designer.vb">
+      <DependentUpon>frm_Receivers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_Receivers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialogs\frm_Sender.designer.vb">
       <DependentUpon>frm_Sender.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_Receiver.resx">
       <DependentUpon>frm_Receiver.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_Receivers.resx">
+      <DependentUpon>frm_Receivers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_Sender.resx">
       <DependentUpon>frm_Sender.vb</DependentUpon>

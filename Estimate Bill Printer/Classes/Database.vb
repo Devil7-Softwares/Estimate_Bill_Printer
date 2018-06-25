@@ -171,11 +171,11 @@ Module Database
                     If Result > 0 Then
                         Return New Sender(Result, Name, Address, GSTIN, WatermarkText, WatermarkAngle, WatermarkFontName, WatermarkFontSize, WatermarkColor, WatermarkOpacity, Heading, Location)
                     Else
-                        MsgBox("Unknown error on creating sender.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                        MsgBox("Unknown error on editing sender.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
                     End If
                 End Using
             Catch ex As Exception
-                MsgBox("Error while creating sender." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                MsgBox("Error while editing sender." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
             End Try
             Return Nothing
         End Function
@@ -240,7 +240,32 @@ Module Database
                     If Result > 0 Then
                         Return New Receiver(Result, Name, Address, State, StateCode, GSTIN)
                     Else
-                        MsgBox("Unknown error on creating sender.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                        MsgBox("Unknown error on creating receiver.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                    End If
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while creating receiver." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return Nothing
+        End Function
+        Public Shared Function Edit(ByVal ID As Integer, ByVal Name As String, ByVal Address As String, ByVal State As String, ByVal StateCode As String, ByVal GSTIN As String, ByVal CloseConnection As Boolean) As Receiver
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("UPDATE `{0}`.`{1}` SET `Name`=@Name,`Address`=@Address,`State`=@State,`StateCode`=@StateCode,`GSTIN`=@GSTIN WHERE ID={2};", DatabaseName, TableName, ID)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Command.Parameters.AddWithValue("@Name", Name)
+                    Command.Parameters.AddWithValue("@Address", Address)
+                    Command.Parameters.AddWithValue("@State", State)
+                    Command.Parameters.AddWithValue("@StateCode", StateCode)
+                    Command.Parameters.AddWithValue("@GSTIN", GSTIN)
+                    Dim Result As Integer = Command.ExecuteNonQuery
+                    If Result > 0 Then
+                        Return New Receiver(Result, Name, Address, State, StateCode, GSTIN)
+                    Else
+                        MsgBox("Unknown error on editing receiver.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
                     End If
                 End Using
             Catch ex As Exception

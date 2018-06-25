@@ -84,4 +84,9 @@
             GridControl_Data.RefreshDataSource()
         End If
     End Sub
+
+    Private Sub btn_Receivers_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Receivers.ItemClick
+        Dim d As New frm_Receivers
+        d.ShowDialog()
+    End Sub
 End Class

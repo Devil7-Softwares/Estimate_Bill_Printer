@@ -70,4 +70,8 @@
                       btn_Remove.Enabled = True
                   End Sub)
     End Sub
+
+    Private Sub ProgressPanel_Loading_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProgressPanel_Loading.Click
+
+    End Sub
 End Class
