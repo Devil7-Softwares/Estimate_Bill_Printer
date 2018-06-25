@@ -119,4 +119,17 @@
             End If
         End If
     End Sub
+
+    Private Sub btn_PrintPreview_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_PrintPreview.ItemClick
+        If GridView_Data.SelectedRowsCount = 1 Then
+            Dim items As New List(Of PrintData)
+            Dim r = CType(GridView_Data.GetRow(GridView_Data.GetSelectedRows(0)), PrintData)
+            items.Add(r)
+            PrintDocumentEx1.Items = items
+            PrintDocumentEx1.PrintTaxDetails = My.Computer.Keyboard.CtrlKeyDown
+            Dim d As New PrintPreviewDialogEx(Me)
+            d.Document = PrintDocumentEx1
+            d.ShowDialog()
+        End If
+    End Sub
 End Class

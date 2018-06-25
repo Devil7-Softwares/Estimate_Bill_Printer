@@ -96,8 +96,18 @@
     <Compile Include="Classes\Objects\PrintData.vb" />
     <Compile Include="Classes\Objects\Service.vb" />
     <Compile Include="Classes\Objects\StringObj.vb" />
+    <Compile Include="Classes\Printing\PageImageList.vb" />
     <Compile Include="Classes\Printing\PrintDocumentEx.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Printing\PrintPreviewControlEx.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Classes\Printing\PrintPreviewDialogEx.designer.vb">
+      <DependentUpon>PrintPreviewDialogEx.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Printing\PrintPreviewDialogEx.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
@@ -185,6 +195,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Classes\Printing\PrintPreviewDialogEx.resx">
+      <DependentUpon>PrintPreviewDialogEx.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_Data.resx">
       <DependentUpon>frm_Data.vb</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +254,14 @@
   <ItemGroup>
     <Compile Include="Classes\Encryption.vb" />
     <Content Include="icon.ico" />
+    <None Include="Resources\full_page_w.png" />
+    <None Include="Resources\full_page.png" />
+    <None Include="Resources\zoom_original.png" />
+    <None Include="Resources\zoom_2page.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\last.png" />
+    <None Include="Resources\first.png" />
+    <None Include="Resources\back.png" />
     <None Include="Resources\Empty.png" />
     <None Include="Resources\refresh_big.png" />
     <None Include="Resources\save.png" />
