@@ -98,4 +98,9 @@
     Private Sub btn_WaterMarkSettings_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_WaterMarkSettings.ItemClick
         frm_WaterMark.ShowDialog()
     End Sub
+
+    Private Sub btn_OtherSettings_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_OtherSettings.ItemClick
+        Dim d As New frm_OtherSettings
+        d.ShowDialog()
+    End Sub
 End Class

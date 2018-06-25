@@ -105,6 +105,12 @@
     <Compile Include="Dialogs\frm_Data.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Dialogs\frm_OtherSettings.designer.vb">
+      <DependentUpon>frm_OtherSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frm_OtherSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dialogs\frm_Receiver.designer.vb">
       <DependentUpon>frm_Receiver.vb</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Dialogs\frm_Data.resx">
       <DependentUpon>frm_Data.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frm_OtherSettings.resx">
+      <DependentUpon>frm_OtherSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frm_Receiver.resx">
       <DependentUpon>frm_Receiver.vb</DependentUpon>

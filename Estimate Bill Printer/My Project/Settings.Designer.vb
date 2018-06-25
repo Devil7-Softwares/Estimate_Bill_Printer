@@ -305,6 +305,30 @@ Namespace My
                 Me("Font") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("18")>  _
+        Public Property GSTPercentage() As Integer
+            Get
+                Return CType(Me("GSTPercentage"),Integer)
+            End Get
+            Set
+                Me("GSTPercentage") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("     Fees            : {5}. {2}{1}     GST @ 18% : {5}. {3}")>  _
+        Public Property TaxDetails() As String
+            Get
+                Return CType(Me("TaxDetails"),String)
+            End Get
+            Set
+                Me("TaxDetails") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
