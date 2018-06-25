@@ -53,10 +53,10 @@
         e.Graphics.DrawString("Sr." & vbNewLine & "No.", Bold.Font, Brushes.Black, 78, 382)
 
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(75, 380, e.PageBounds.Width - (2 * 75), 45)) 'G
-        e.Graphics.DrawString("Description of Services to be Rendered", Bold.Font, Brushes.Black, New Rectangle(75 + 35, 380, e.PageBounds.Width - (2 * 75) - 115 - 35, 45), New StringFormat With {.LineAlignment = StringAlignment.Far, .Alignment = StringAlignment.Center})
+        e.Graphics.DrawString("Description of Services", Bold.Font, Brushes.Black, New Rectangle(75 + 35, 380, e.PageBounds.Width - (2 * 75) - 115 - 35, 45), New StringFormat With {.LineAlignment = StringAlignment.Far, .Alignment = StringAlignment.Center})
 
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(75 + e.PageBounds.Width - (2 * 75) - 115, 380, 115, 240)) 'H
-        e.Graphics.DrawString("Estimated Fees", Bold.Font, Brushes.Black, New Rectangle(75 + e.PageBounds.Width - (2 * 75) - 115, 380, 115, 45), New StringFormat With {.LineAlignment = StringAlignment.Far, .Alignment = StringAlignment.Center})
+        e.Graphics.DrawString("Fees", Bold.Font, Brushes.Black, New Rectangle(75 + e.PageBounds.Width - (2 * 75) - 115, 380, 115, 45), New StringFormat With {.LineAlignment = StringAlignment.Far, .Alignment = StringAlignment.Center})
 
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(75, 595, e.PageBounds.Width - (2 * 75), 25)) 'I
         e.Graphics.DrawString("Total", Bold.Font, Brushes.Black, New Rectangle(110, 595, e.PageBounds.Width - (2 * 75) - 115 - 35, 25), New StringFormat With {.LineAlignment = StringAlignment.Center, .Alignment = StringAlignment.Near})
