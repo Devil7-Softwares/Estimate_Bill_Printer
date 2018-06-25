@@ -149,6 +149,162 @@ Namespace My
                 Me("LastUsedService") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-60")>  _
+        Public Property Angle() As Integer
+            Get
+                Return CType(Me("Angle"),Integer)
+            End Get
+            Set
+                Me("Angle") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Black")>  _
+        Public Property TextColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("TextColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("TextColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public Property TextLocation() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("TextLocation"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("TextLocation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("100")>  _
+        Public Property TextOpacity() As Integer
+            Get
+                Return CType(Me("TextOpacity"),Integer)
+            End Get
+            Set
+                Me("TextOpacity") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property WatermarkImagekey() As String
+            Get
+                Return CType(Me("WatermarkImagekey"),String)
+            End Get
+            Set
+                Me("WatermarkImagekey") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property TextWatermark() As Boolean
+            Get
+                Return CType(Me("TextWatermark"),Boolean)
+            End Get
+            Set
+                Me("TextWatermark") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AutoWatermark() As Boolean
+            Get
+                Return CType(Me("AutoWatermark"),Boolean)
+            End Get
+            Set
+                Me("AutoWatermark") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property WaterMarkText() As String
+            Get
+                Return CType(Me("WaterMarkText"),String)
+            End Get
+            Set
+                Me("WaterMarkText") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property ImageWatermark() As Boolean
+            Get
+                Return CType(Me("ImageWatermark"),Boolean)
+            End Get
+            Set
+                Me("ImageWatermark") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public Property ImageSize() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("ImageSize"),Global.System.Drawing.Size)
+            End Get
+            Set
+                Me("ImageSize") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 0")>  _
+        Public Property ImageLocation() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("ImageLocation"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("ImageLocation") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("100")>  _
+        Public Property ImageOpacity() As Integer
+            Get
+                Return CType(Me("ImageOpacity"),Integer)
+            End Get
+            Set
+                Me("ImageOpacity") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 36pt")>  _
+        Public Property Font() As Global.System.Drawing.Font
+            Get
+                Return CType(Me("Font"),Global.System.Drawing.Font)
+            End Get
+            Set
+                Me("Font") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

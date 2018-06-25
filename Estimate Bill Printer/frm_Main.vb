@@ -94,4 +94,8 @@
         Dim n As New frm_Services
         n.ShowDialog()
     End Sub
+
+    Private Sub btn_WaterMarkSettings_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_WaterMarkSettings.ItemClick
+        frm_WaterMark.ShowDialog()
+    End Sub
 End Class
