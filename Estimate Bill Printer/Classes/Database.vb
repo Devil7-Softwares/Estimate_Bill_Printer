@@ -67,6 +67,21 @@ Module Database
             End Try
             Return Nothing
         End Function
+        Public Shared Function Delete(ByVal ID As Integer) As Integer
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("DELETE FROM `{0}`.`{1}` WHERE ID={2};", DatabaseName, TableName, ID)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Return Command.ExecuteNonQuery
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while creating bill." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return 0
+        End Function
     End Class
     Public Class Senders
         Public Shared TableName As String = "senders"

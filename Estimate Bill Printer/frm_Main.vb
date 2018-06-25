@@ -69,4 +69,19 @@
         Dim d As New frm_Senders
         d.ShowDialog()
     End Sub
+
+    Private Sub btn_Remove_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Remove.ItemClick
+        If GridView_Data.SelectedRowsCount > 0 Then
+            For Each i As Integer In GridView_Data.GetSelectedRows
+                Dim r = CType(GridView_Data.GetRow(i), PrintData)
+                If Database.Entries.Delete(r.ID) > 0 Then
+                    CType(Me.GridControl_Data.DataSource, List(Of PrintData)).Remove(r)
+                Else
+                    MsgBox("Error on deleting entries", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
+                    Exit For
+                End If
+            Next
+            GridControl_Data.RefreshDataSource()
+        End If
+    End Sub
 End Class
