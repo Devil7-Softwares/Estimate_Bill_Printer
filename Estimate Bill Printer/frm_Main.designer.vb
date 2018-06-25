@@ -48,6 +48,7 @@ Partial Class frm_Main
         Me.Theme = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.ProgressPanel_Bills = New DevExpress.XtraWaitForm.ProgressPanel()
         Me.Worker_Bills = New System.ComponentModel.BackgroundWorker()
+        Me.PrintDocumentEx1 = New D7Automation.PrintDocumentEx()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl_Data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView_Data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -261,6 +262,12 @@ Partial Class frm_Main
         'Worker_Bills
         '
         '
+        'PrintDocumentEx1
+        '
+        Me.PrintDocumentEx1.DocumentName = "Estimate Bill"
+        Me.PrintDocumentEx1.Items = Nothing
+        Me.PrintDocumentEx1.PrintTaxDetails = False
+        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -312,6 +319,7 @@ Partial Class frm_Main
     Friend WithEvents ProgressPanel_Bills As DevExpress.XtraWaitForm.ProgressPanel
     Friend WithEvents Worker_Bills As System.ComponentModel.BackgroundWorker
     Friend WithEvents btn_Refresh As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents PrintDocumentEx1 As D7Automation.PrintDocumentEx
 
 
 End Class

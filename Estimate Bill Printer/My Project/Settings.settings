@@ -71,5 +71,8 @@
     <Setting Name="TaxDetails" Type="System.String" Scope="User">
       <Value Profile="(Default)">     Fees            : {5}. {2}{1}     GST @ 18% : {5}. {3}</Value>
     </Setting>
+    <Setting Name="WatermarkImage" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

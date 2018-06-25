@@ -103,4 +103,20 @@
         Dim d As New frm_OtherSettings
         d.ShowDialog()
     End Sub
+
+    Private Sub btn_Print_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Print.ItemClick
+        If GridView_Data.SelectedRowsCount > 0 Then
+            Dim items As New List(Of PrintData)
+            For Each i As Integer In GridView_Data.GetSelectedRows
+                Dim r = CType(GridView_Data.GetRow(i), PrintData)
+                items.Add(r)
+            Next
+            PrintDocumentEx1.Items = items
+            PrintDocumentEx1.PrintTaxDetails = My.Computer.Keyboard.CtrlKeyDown
+            If PrintDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                PrintDocumentEx1.PrinterSettings = PrintDialog1.PrinterSettings
+                PrintDocumentEx1.Print()
+            End If
+        End If
+    End Sub
 End Class

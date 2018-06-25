@@ -89,13 +89,16 @@
   <ItemGroup>
     <Compile Include="Classes\Database.vb" />
     <Compile Include="Classes\Enums.vb" />
-    <Compile Include="Classes\ImagingEx.vb" />
+    <Compile Include="Classes\Printing\ImagingEx.vb" />
     <Compile Include="Classes\Misc.vb" />
     <Compile Include="Classes\Objects\Receiver.vb" />
     <Compile Include="Classes\Objects\Sender.vb" />
     <Compile Include="Classes\Objects\PrintData.vb" />
     <Compile Include="Classes\Objects\Service.vb" />
     <Compile Include="Classes\Objects\StringObj.vb" />
+    <Compile Include="Classes\Printing\PrintDocumentEx.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\XtraFormTemp.vb">
       <SubType>Form</SubType>
     </Compile>
