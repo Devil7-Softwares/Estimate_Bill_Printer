@@ -60,6 +60,7 @@ Partial Class frm_Main
         '
         'RibbonControl
         '
+        Me.RibbonControl.AllowMinimizeRibbon = False
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btn_Add, Me.btn_Remove, Me.btn_Edit, Me.btn_Print, Me.btn_PrintPreview, Me.btn_Senders, Me.btn_Receivers, Me.btn_WaterMarkSettings, Me.SkinRibbonGalleryBarItem1, Me.btn_OtherSettings, Me.btn_Services, Me.btn_ServerSettings, Me.btn_Refresh, Me.btn_PDF})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
@@ -67,6 +68,7 @@ Partial Class frm_Main
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.rp_Home, Me.RibbonPage_Settings})
         Me.RibbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
+        Me.RibbonControl.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.RibbonControl.ShowToolbarCustomizeItem = False
         Me.RibbonControl.Size = New System.Drawing.Size(592, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
@@ -195,6 +197,7 @@ Partial Class frm_Main
         Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Edit)
         Me.RibbonPageGroup_Items.ItemLinks.Add(Me.btn_Remove)
         Me.RibbonPageGroup_Items.Name = "RibbonPageGroup_Items"
+        Me.RibbonPageGroup_Items.ShowCaptionButton = False
         Me.RibbonPageGroup_Items.Text = "Items"
         '
         'RibbonPageGroup_Printing
@@ -202,12 +205,14 @@ Partial Class frm_Main
         Me.RibbonPageGroup_Printing.ItemLinks.Add(Me.btn_Print)
         Me.RibbonPageGroup_Printing.ItemLinks.Add(Me.btn_PrintPreview)
         Me.RibbonPageGroup_Printing.Name = "RibbonPageGroup_Printing"
+        Me.RibbonPageGroup_Printing.ShowCaptionButton = False
         Me.RibbonPageGroup_Printing.Text = "Printing"
         '
         'RibbonPageGroup_Export
         '
         Me.RibbonPageGroup_Export.ItemLinks.Add(Me.btn_PDF)
         Me.RibbonPageGroup_Export.Name = "RibbonPageGroup_Export"
+        Me.RibbonPageGroup_Export.ShowCaptionButton = False
         Me.RibbonPageGroup_Export.Text = "Export"
         '
         'RibbonPage_Settings
@@ -221,6 +226,7 @@ Partial Class frm_Main
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btn_Senders)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btn_Receivers)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.ShowCaptionButton = False
         Me.RibbonPageGroup1.Text = "Persons"
         '
         'RibbonPageGroup2
@@ -231,6 +237,7 @@ Partial Class frm_Main
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btn_OtherSettings)
         Me.RibbonPageGroup2.ItemLinks.Add(Me.SkinRibbonGalleryBarItem1)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.ShowCaptionButton = False
         Me.RibbonPageGroup2.Text = "Others"
         '
         'RibbonStatusBar
