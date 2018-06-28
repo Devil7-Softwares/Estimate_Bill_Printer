@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Module Database
-    Public DatabaseName As String = Encryption.Decrypt(My.Settings.Database)
+    Public Settings As ServerSettings = ServerSettings.Load
+    Public DatabaseName As String = Encryption.Decrypt(Settings.DatabaseName)
     Private connection As MySqlConnection
     Function GetConnection() As MySqlConnection
         If connection Is Nothing Then
-            connection = New MySqlConnection(String.Format("server={0};port={1}; user id={2}; password={3}; database={4}; pooling=true", Encryption.Decrypt(My.Settings.Server), If(Encryption.Decrypt(My.Settings.Port) = "", 3306, Encryption.Decrypt(My.Settings.Port)), Encryption.Decrypt(My.Settings.Username), Encryption.Decrypt(My.Settings.Password), Encryption.Decrypt(My.Settings.Database)))
+            connection = New MySqlConnection(String.Format("server={0};port={1}; user id={2}; password={3}; database={4}; pooling=true", Encryption.Decrypt(Settings.ServerName), If(Encryption.Decrypt(Settings.Port) = "", 3306, Encryption.Decrypt(Settings.Port)), Encryption.Decrypt(Settings.UserName), Encryption.Decrypt(Settings.Password), Encryption.Decrypt(Settings.DatabaseName)))
         End If
         Return connection
     End Function
@@ -104,7 +105,7 @@ Module Database
                             Dim Heading As String = dr.Item("Heading").ToString
                             Dim Location As Point = New Point(dr.Item("Location").ToString.Split(",")(0), dr.Item("Location").ToString.Split(",")(1))
 
-                            
+
                             r.Add(New Sender(ID, Name, Address, GSTIN, WatermarkText, WatermarkAngle, WatermarkFontName, WatermarkFontSize, WatermarkColor, WatermarkOpacity, Heading, Location))
                         End While
                     End Using
@@ -213,7 +214,7 @@ Module Database
                             Dim State As String = dr.Item("State").ToString
                             Dim Statecode As String = dr.Item("StateCode").ToString
                             Dim GSTIN As String = dr.Item("GSTIN").ToString
-                            r.Add(New Receiver(ID, Name, Address, State, StateCode, GSTIN))
+                            r.Add(New Receiver(ID, Name, Address, State, Statecode, GSTIN))
                         End While
                     End Using
                 End Using
@@ -310,7 +311,7 @@ Module Database
             Catch ex As Exception
                 MsgBox("Error while saving services." & vbNewLine & vbNewLine & "Additional Information :" & vbNewLine & vbNewLine & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Error")
             Finally
-                If closeconnection Then Connection.Close()
+                If CloseConnection Then Connection.Close()
             End Try
             Return 0
         End Function
