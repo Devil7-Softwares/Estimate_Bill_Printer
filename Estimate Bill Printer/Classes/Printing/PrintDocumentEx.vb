@@ -95,7 +95,7 @@
             If item.HasGSTIN Then
                 Dim f As New Font("Rupee Foradian", 12)
                 Dim tax As Integer = (TotalAmount * (My.Settings.GSTPercentage / 100))
-                Dim s As String = String.Format(My.Settings.TaxDetails, vbTab, vbNewLine, TotalAmount, tax, (TotalAmount * ((My.Settings.GSTPercentage / 2) / 100)), "`")
+                Dim s As String = String.Format(My.Settings.TaxDetails, vbTab, vbNewLine, TotalAmount, tax, (TotalAmount * ((My.Settings.GSTPercentage / 2) / 100)), "`", My.Settings.GSTPercentage & "%", (My.Settings.GSTPercentage / 2) & "%")
                 Dim si As Size = e.Graphics.MeasureString(s, f).ToSize
                 si.Width += 50
                 Dim rect As New Rectangle(New Point(60, 900), si)

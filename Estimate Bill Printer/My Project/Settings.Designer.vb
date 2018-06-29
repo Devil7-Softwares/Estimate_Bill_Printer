@@ -248,7 +248,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("     Fees            : {5}. {2}{1}     GST @ 18% : {5}. {3}")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("     Fees            : {5}. {2}{1}     GST @ {6} : {5}. {3}")>  _
         Public Property TaxDetails() As String
             Get
                 Return CType(Me("TaxDetails"),String)

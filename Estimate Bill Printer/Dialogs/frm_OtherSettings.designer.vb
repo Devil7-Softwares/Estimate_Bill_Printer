@@ -74,14 +74,15 @@ Partial Class frm_OtherSettings
         Me.LabelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl3.Location = New System.Drawing.Point(115, 63)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(178, 90)
+        Me.LabelControl3.Size = New System.Drawing.Size(178, 113)
         Me.LabelControl3.TabIndex = 4
         Me.LabelControl3.Text = "{0} - Tab" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{1} - Newline" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{2} - Total Amount" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{3} - GST Tax Amount Full" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{4} - GS" & _
-            "T Tax Amount Half" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{5} - Rupees Symbol"
+    "T Tax Amount Half" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{5} - Rupees Symbol" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{6} - GST Tax Percentage Full" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "{7} - GST" & _
+    " Tax Percentage Half"
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(25, 162)
+        Me.LabelControl4.Location = New System.Drawing.Point(25, 185)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(84, 13)
         Me.LabelControl4.TabIndex = 5
@@ -90,7 +91,7 @@ Partial Class frm_OtherSettings
         'txt_GSTPercentage
         '
         Me.txt_GSTPercentage.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txt_GSTPercentage.Location = New System.Drawing.Point(115, 159)
+        Me.txt_GSTPercentage.Location = New System.Drawing.Point(115, 182)
         Me.txt_GSTPercentage.Name = "txt_GSTPercentage"
         Me.txt_GSTPercentage.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txt_GSTPercentage.Size = New System.Drawing.Size(197, 20)
@@ -98,7 +99,7 @@ Partial Class frm_OtherSettings
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(19, 193)
+        Me.LabelControl5.Location = New System.Drawing.Point(19, 216)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(90, 13)
         Me.LabelControl5.TabIndex = 7
@@ -106,7 +107,7 @@ Partial Class frm_OtherSettings
         '
         'txt_PrinterName
         '
-        Me.txt_PrinterName.Location = New System.Drawing.Point(115, 190)
+        Me.txt_PrinterName.Location = New System.Drawing.Point(115, 213)
         Me.txt_PrinterName.Name = "txt_PrinterName"
         Me.txt_PrinterName.Size = New System.Drawing.Size(197, 20)
         Me.txt_PrinterName.TabIndex = 8
@@ -115,7 +116,7 @@ Partial Class frm_OtherSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(322, 222)
+        Me.ClientSize = New System.Drawing.Size(322, 245)
         Me.Controls.Add(Me.txt_PrinterName)
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.txt_GSTPercentage)
