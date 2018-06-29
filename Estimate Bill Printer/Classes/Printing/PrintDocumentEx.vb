@@ -63,7 +63,7 @@
 
         e.Graphics.DrawRectangle(Pens.Black, New Rectangle(75, 620, e.PageBounds.Width - (2 * 75), 60)) 'E
         If item.HasGSTIN Then
-            e.Graphics.DrawString("Notes:" & vbNewLine & "Tax invoice raised after the above services are rendered would be liable to GST @ 18%", Body.Font, Brushes.Black, New Rectangle(75, 620, e.PageBounds.Width - (2 * 75), 60))
+            e.Graphics.DrawString("Notes:" & vbNewLine & "Tax invoice raised after the above services are rendered would be liable to GST @ " & My.Settings.GSTPercentage & "%", Body.Font, Brushes.Black, New Rectangle(75, 620, e.PageBounds.Width - (2 * 75), 60))
         End If
 
         Dim MaxWidth As Integer = e.PageBounds.Width - (2 * 75) - 115 - 35
