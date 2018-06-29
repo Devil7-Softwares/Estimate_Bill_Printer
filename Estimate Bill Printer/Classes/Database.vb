@@ -64,6 +64,33 @@ Module Database
             End Try
             Return Nothing
         End Function
+        Public Shared Function Edit(ByVal ID As Integer, ByVal Sender As Sender, ByVal SerialNumber As String, ByVal EstimateDate As Date, ByVal Receiver As Receiver, ByVal Services As List(Of Service), ByVal CloseConnection As Boolean) As PrintData
+            Try
+                Dim Connection As MySqlConnection = GetConnection()
+                If Connection.State = ConnectionState.Closed Then Connection.Open()
+
+                Dim CommandText As String = String.Format("UPDATE `{0}`.`{1}` SET `Serial`=@Serial,`Estimate Date`=@EstimateDate,`Sender`=@Sender,`Service`=@Service,`Receiver`=@Receiver WHERE `ID`=@ID;", DatabaseName, TableName)
+
+                Using Command As New MySqlCommand(CommandText, Connection)
+                    Command.Parameters.AddWithValue("@ID", ID)
+                    Command.Parameters.AddWithValue("@Serial", SerialNumber)
+                    Command.Parameters.AddWithValue("@EstimateDate", EstimateDate)
+                    Command.Parameters.AddWithValue("@Sender", Sender.ToXML)
+                    Command.Parameters.AddWithValue("@Service", Service.ToXML(Services))
+                    Command.Parameters.AddWithValue("@Receiver", Receiver.ToXML)
+
+                    Dim Result As Integer = Command.ExecuteNonQuery
+                    If Result > 0 Then
+                        Return New PrintData(ID, Sender, SerialNumber, EstimateDate, Receiver, Services)
+                    Else
+                        MsgBox("Unknown error on creating bill.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+                    End If
+                End Using
+            Catch ex As Exception
+                MsgBox("Error while creating bill." & vbNewLine & vbNewLine & "Additional Information:" & ex.Message & vbNewLine & vbNewLine & ex.StackTrace, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Error")
+            End Try
+            Return Nothing
+        End Function
         Public Shared Function Delete(ByVal ID As Integer) As Integer
             Try
                 Dim Connection As MySqlConnection = GetConnection()

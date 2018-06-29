@@ -6,6 +6,7 @@
     Property ReceiversEdited As Boolean = False
     Dim ReceiversList As New List(Of Receiver)
     Dim SendersList As New List(Of Sender)
+    Dim ID_Edit As Integer = 0
     Sub New(ByVal Mode As DialogMode, ByVal ServicesList As List(Of String), ByVal ReceiversList As List(Of Receiver), ByVal SendersList As List(Of Sender), Optional ByVal Item As PrintData = Nothing, Optional ByVal Serial As String = "")
 
         ' This call is required by the designer.
@@ -20,6 +21,9 @@
         Me.SendersList = SendersList
         Me.AllServices = ServicesList
         Me.ReceiversList = ReceiversList
+        If Item IsNot Nothing Then
+            ID_Edit = Item.ID
+        End If
     End Sub
     Private Sub frm_Data_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         GridControl_Services.DataSource = New List(Of Service)
@@ -134,10 +138,18 @@
     End Sub
 
     Private Sub btn_Ok_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Ok.Click
-        Me.Item = Database.Entries.Create(cmb_Sender.SelectedItem, txt_SerialNumber.Text, txt_Date.EditValue, cmb_Receiver.SelectedItem, GridView_Services.DataSource, True)
-        If Me.Item IsNot Nothing Then
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
+        If Me.Mode = DialogMode.Add Then
+            Me.Item = Database.Entries.Create(cmb_Sender.SelectedItem, txt_SerialNumber.Text, txt_Date.EditValue, cmb_Receiver.SelectedItem, GridView_Services.DataSource, True)
+            If Me.Item IsNot Nothing Then
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
+        Else
+            Me.Item = Database.Entries.Edit(ID_Edit, cmb_Sender.SelectedItem, txt_SerialNumber.Text, txt_Date.EditValue, cmb_Receiver.SelectedItem, GridView_Services.DataSource, True)
+            If Me.Item IsNot Nothing Then
+                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.Close()
+            End If
         End If
     End Sub
 
