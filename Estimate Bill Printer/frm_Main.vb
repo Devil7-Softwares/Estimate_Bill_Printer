@@ -73,7 +73,8 @@
 
     Private Sub btn_Edit_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Edit.ItemClick
         If GridView_Data.SelectedRowsCount = 1 Then
-            Dim d As New frm_Data(DialogMode.Edit, ServicesList, ReceiversList, SendersList)
+            Dim r = CType(GridView_Data.GetRow(GridView_Data.GetSelectedRows(0)), PrintData)
+            Dim d As New frm_Data(DialogMode.Edit, ServicesList, ReceiversList, SendersList, r)
             If d.ShowDialog = Windows.Forms.DialogResult.OK Then
                 If d.ServicesEdited Then
                     Database.Services.Save(d.AllServices, True)
