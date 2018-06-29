@@ -111,6 +111,7 @@
     Private Sub btn_Senders_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Senders.ItemClick
         Dim d As New frm_Senders
         d.ShowDialog()
+        If Not Worker_Bills.IsBusy Then Worker_Bills.RunWorkerAsync()
     End Sub
 
     Private Sub btn_Remove_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Remove.ItemClick
@@ -131,11 +132,13 @@
     Private Sub btn_Receivers_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Receivers.ItemClick
         Dim d As New frm_Receivers
         d.ShowDialog()
+        If Not Worker_Bills.IsBusy Then Worker_Bills.RunWorkerAsync()
     End Sub
 
     Private Sub btn_Services_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Services.ItemClick
         Dim n As New frm_Services
         n.ShowDialog()
+        If Not Worker_Bills.IsBusy Then Worker_Bills.RunWorkerAsync()
     End Sub
 
     Private Sub btn_WaterMarkSettings_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_WaterMarkSettings.ItemClick
