@@ -62,7 +62,31 @@
     End Sub
 
     Private Sub btn_Add_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Add.ItemClick
-        Dim d As New frm_Data(DialogMode.Add, ServicesList, ReceiversList, SendersList)
+        Dim sa As String = "0000"
+        Try
+            Dim sno As Integer = 0
+            Dim formatr As String = "0000"
+            For Each i As PrintData In GridControl_Data.DataSource
+                Try
+                    If CInt(i.SerialNumber) > sno Then
+                        sno = CInt(i.SerialNumber)
+                        formatr = i.SerialNumber
+                        For ino As Integer = 1 To 9
+                            formatr = formatr.Replace(ino, 0)
+                        Next
+                    End If
+                Catch ex As Exception
+
+                End Try
+            Next
+            If sno > 0 Then
+                sa = CInt(sno + 1).ToString(formatr)
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Dim d As New frm_Data(DialogMode.Add, ServicesList, ReceiversList, SendersList, Serial:=sa)
         If d.ShowDialog = Windows.Forms.DialogResult.OK Then
             If d.ServicesEdited Then
                 Database.Services.Save(d.AllServices, True)
