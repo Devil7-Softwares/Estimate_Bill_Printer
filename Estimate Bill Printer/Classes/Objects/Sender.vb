@@ -1,4 +1,5 @@
-﻿Public Class Sender
+﻿Imports System.ComponentModel
+Public Class Sender
     Sub New(ByVal ID As Integer, ByVal Name As String, ByVal Address As String, ByVal GSTIN As String, ByVal WatermarkText As String, ByVal WatermarkAngle As Integer, ByVal WatermarkFontName As String, ByVal WatermarkFontSize As Single, ByVal WatermarkColor As Color, ByVal WatermarkOpacity As Integer, ByVal Heading As String, ByVal Location As Point)
         Me.ID = ID
         Me.Name = Name
@@ -19,13 +20,20 @@
     Property Name As String = ""
     Property Address As String = ""
     Property GSTIN As String = ""
+    <Browsable(False)> _
     Property WatermarkText As String = ""
+    <Browsable(False)> _
     Property WatermarkAngle As Integer = 0
+    <Browsable(False)> _
     Property WatermarkFontName As String = "Microsoft Sans Serif"
+    <Browsable(False)> _
     Property WatermarkFontSize As Single = 95.25
+    <Browsable(False)> _
     Property WatermarkColor As Color = Color.Black
+    <Browsable(False)> _
     Property WatermarkOpacity As Integer = 100
     Property Heading As String = ""
+    <Browsable(False)> _
     Property Location As New Point(0, 0)
     Public Overrides Function ToString() As String
         Return Me.Name
