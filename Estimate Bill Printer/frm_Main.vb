@@ -87,7 +87,7 @@
         End Try
 
         Dim d As New frm_Data(DialogMode.Add, ServicesList, ReceiversList, SendersList, Serial:=sa)
-        If d.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If d.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             If d.ServicesEdited Then
                 Database.Services.Save(d.AllServices, True)
             End If
@@ -99,7 +99,7 @@
         If GridView_Data.SelectedRowsCount = 1 Then
             Dim r = CType(GridView_Data.GetRow(GridView_Data.GetSelectedRows(0)), PrintData)
             Dim d As New frm_Data(DialogMode.Edit, ServicesList, ReceiversList, SendersList, r)
-            If d.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If d.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 If d.ServicesEdited Then
                     Database.Services.Save(d.AllServices, True)
                 End If
@@ -159,7 +159,7 @@
             Next
             PrintDocumentEx1.Items = items
             PrintDocumentEx1.PrintTaxDetails = My.Computer.Keyboard.CtrlKeyDown
-            If PrintDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If PrintDialog1.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 PrintDocumentEx1.PrinterSettings = PrintDialog1.PrinterSettings
                 PrintDocumentEx1.Print()
             End If
@@ -182,7 +182,7 @@
     Private Sub btn_PDF_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_PDF.ItemClick
         If GridView_Data.SelectedRowsCount > 0 Then
             Dim PrintTax As Boolean = My.Computer.Keyboard.CtrlKeyDown
-            If SavePDF.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If SavePDF.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                 Dim items As New List(Of PrintData)
                 For Each i As Integer In GridView_Data.GetSelectedRows
                     Dim r = CType(GridView_Data.GetRow(i), PrintData)

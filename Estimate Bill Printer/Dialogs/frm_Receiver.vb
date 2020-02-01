@@ -41,7 +41,7 @@
     End Sub
 
     Private Sub btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancel.Click
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 
@@ -49,13 +49,13 @@
         If Mode = DialogMode.Add Then
             Me.Item = Database.Receivers.Create(txt_Name.Text, txt_Address.Text, cmb_State.SelectedItem.ToString, txt_StateCode.Text, txt_GSTIN.Text, False)
             If Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         Else
             Me.Item = Database.Receivers.Edit(ID, txt_Name.Text, txt_Address.Text, cmb_State.SelectedItem.ToString, txt_StateCode.Text, txt_GSTIN.Text, False)
             If Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         End If

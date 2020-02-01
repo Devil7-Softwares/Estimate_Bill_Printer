@@ -9,7 +9,7 @@
 
     Private Sub btn_Add_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles btn_Add.ItemClick
         Dim d As New frm_Receiver(DialogMode.Add)
-        If d.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If d.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             Details.Add(d.Item)
             GridControl_Receivers.RefreshDataSource()
         End If
@@ -21,7 +21,7 @@
                 Dim r = GridView_Receivers.GetRow(GridView_Receivers.GetSelectedRows(0))
                 Dim index As Integer = Details.IndexOf(r)
                 Dim n As New frm_Receiver(DialogMode.Edit, r)
-                If n.ShowDialog = Windows.Forms.DialogResult.OK Then
+                If n.ShowDialog = System.Windows.Forms.DialogResult.OK Then
                     Details.Remove(r)
                     Details.Insert(index, n.Item)
                     GridControl_Receivers.RefreshDataSource()

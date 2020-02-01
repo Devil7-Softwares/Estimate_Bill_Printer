@@ -95,7 +95,7 @@
         Return IO.Path.Combine(Application.StartupPath, My.Settings.WatermarkImagekey & ".wmg")
     End Function
     Private Sub btn_Browse_Image_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Browse_Image.Click
-        If OpenImage.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If OpenImage.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             My.Settings.WatermarkImagekey = "W" & (New Random).Next(100000, 999999)
             My.Settings.Save()
             My.Computer.FileSystem.CopyFile(OpenImage.FileName, WatermarkImage)

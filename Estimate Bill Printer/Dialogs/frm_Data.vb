@@ -127,7 +127,7 @@
 
     Private Sub btn_Add_Receiver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Add_Receiver.Click
         Dim d As New frm_Receiver(DialogMode.Add)
-        If d.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If d.ShowDialog = System.Windows.Forms.DialogResult.OK Then
             cmb_Receiver.Properties.Items.Add(d.Item)
             Dim l As New List(Of Receiver)
             For Each i As Receiver In cmb_Receiver.Properties.Items
@@ -141,20 +141,20 @@
         If Me.Mode = DialogMode.Add Then
             Me.Item = Database.Entries.Create(cmb_Sender.SelectedItem, txt_SerialNumber.Text, txt_Date.EditValue, cmb_Receiver.SelectedItem, GridView_Services.DataSource, True)
             If Me.Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         Else
             Me.Item = Database.Entries.Edit(ID_Edit, cmb_Sender.SelectedItem, txt_SerialNumber.Text, txt_Date.EditValue, cmb_Receiver.SelectedItem, GridView_Services.DataSource, True)
             If Me.Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         End If
     End Sub
 
     Private Sub btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancel.Click
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 

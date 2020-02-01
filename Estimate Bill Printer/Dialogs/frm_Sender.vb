@@ -10,7 +10,7 @@
     End Sub
     Dim mode As DialogMode
     Private Sub btn_Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancel.Click
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
     Property Item As Sender
@@ -19,13 +19,13 @@
         If mode = DialogMode.Add Then
             Me.Item = Database.Senders.Create(txt_Name.Text, txt_Address.Text, txt_GSTIN.Text, txt_WatermarkText.Text, txt_Angle_Text.Value, font_Text.SelectedItem.ToString, txt_Size.Value, color_Text.Color, txt_Opacity_Text.Value, txt_Heading.Text, New Point(loc_X_Text.Value, loc_Y_Text.Value), False)
             If Me.Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         Else
             Me.Item = Database.Senders.Edit(ID, txt_Name.Text, txt_Address.Text, txt_GSTIN.Text, txt_WatermarkText.Text, txt_Angle_Text.Value, font_Text.SelectedItem.ToString, txt_Size.Value, color_Text.Color, txt_Opacity_Text.Value, txt_Heading.Text, New Point(loc_X_Text.Value, loc_Y_Text.Value), False)
             If Me.Item IsNot Nothing Then
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
             End If
         End If

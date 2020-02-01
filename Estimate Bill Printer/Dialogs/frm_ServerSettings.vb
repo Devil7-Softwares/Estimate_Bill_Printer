@@ -8,7 +8,7 @@
             Settings.UserName = Encryption.Encrypt(txt_UserName.Text)
             Settings.Password = Encryption.Encrypt(txt_Password.Text)
             Settings.Save()
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             MsgBox("Successfully saved Server Settings. Restart application to apply the changes.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Done")
             Me.Close()
         Catch ex As Exception

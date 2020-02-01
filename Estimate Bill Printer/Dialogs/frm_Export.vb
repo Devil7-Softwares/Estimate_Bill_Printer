@@ -67,7 +67,7 @@
     End Sub
 
     Private Sub Worker_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles WorkerDOC.RunWorkerCompleted, WorkerPDF.RunWorkerCompleted
-        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 End Class
